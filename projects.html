@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Subahn</title>
+    <link rel="shortcut icon" href="img/android-chrome-192x192.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+        html ,body{
+            width: 100%;
+            height: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+            overflow-y: hidden;
+            
+        }
+        #main{
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            padding:  0;
+          
+           
+        }
+        .elem{
+           
+         border:1px solid gray ;
+         border-radius: 20px;
+            display: flex;
+            align-items: flex-end;
+            padding: 3vw;
+              position: relative;
+              cursor: pointer;
+              overflow: hidden;
+        
+
+
+        }
+        .elem h2 {
+            font-size: 1vw;
+            color: #a32a2a;
+            z-index: 9;
+            text-transform: uppercase;
+        }
+        
+       .elem .overlay {
+    width: 100%;
+    height: 100%;
+    background-color: #dcff7c;
+    position: absolute;
+    left: 0;
+    top: -100%;
+    transition: top 0.3s ease; /* Optional for smooth animation */
+    pointer-events: none;
+}
+
+.elem:hover .overlay {
+    top: 0;
+}
+.elem:hover h2{
+    color: #000;
+}
+.subhead{
+            position: absolute;
+            bottom: 2em;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            z-index: 9999;
+        }
+        .subhead a{
+            text-decoration: none;
+            text-transform: uppercase;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 300;
+            color: #969696;
+            position: relative;
+        }
+        a.contact{
+            color: #dbdbdb;
+            letter-spacing: -3px;
+            font-size: 24px;
+            margin-left: 1em;
+        }
+        a.aboutme{
+            width: 30%;
+             font-size: 10px;
+       
+        }
+
+ .nav{
+            display: flex;
+            justify-content: space-between;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #dbdbdb;
+            letter-spacing: -3px;
+            font-size: 24px;
+            margin: 1em;
+            position: relative;
+        }
+        .nav a:first-child{
+            color: #dcff7c;
+        }
+        .elemcontainer{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          
+            height: 70%;
+           
+        }
+        .colum1{
+            display: flex;
+            flex-direction: row;
+            
+            width: 50%;
+            align-items: center;
+             gap: 20px;
+             padding: 4vw;
+        }
+        .elem h2 {
+    font-size: 3vw;
+    color: #969696;
+    z-index: 9;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    position: relative;
+}
+
+/* Icon links beside h2 */
+.elem .icons a {
+    
+    color: #ffffff;
+    font-size: 2vw;
+    transition: color 0.3s ease;
+}
+
+.elem .icons a:hover {
+    color: #000000;
+}
+
+/* Top-right arrow icon */
+.arrow-icon {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5vw;
+    color: #ffffff;
+    z-index: 10;
+}
+
+.elem:hover .arrow-icon{
+    color: #000000;
+}
+.arrow-icon1 a {
+    position: absolute;
+    top: 40%;
+    left: 3vw;
+    font-size: 1.5vw;
+    color: #ffffff;
+    z-index: 10;
+}
+
+.elem:hover .arrow-icon1 a{
+    color: #000000;
+}
+                #curser{
+    width: 1vw;
+    height: 1vw;
+    background-color: #dcff7c;
+    border-radius: 50%;
+    position: fixed;
+     z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translate(-50% , -50%);
+}
+#curser h4{
+    font-weight: 500;
+}
+.nav a::after{
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          height: 1.5px;
+          width: 0;
+          background-color: #dbdbdb;
+          transition: all ease 0.3s;
+         }
+         .nav a:hover::after{
+          width: 100%;
+         }
+          .nav a:first-child::after{
+            background-color: #dcff7c;
+        }
+         .subhead a::after{
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          height: 1.5px;
+          width: 0;
+          background-color: #969696;
+          transition: all ease 0.3s;
+         }
+         .subhead a:hover::after{
+          width: 100%;
+         }
+         a.aboutme:hover::after{
+          width: 0%;
+
+         }
+
+         #elem1{
+            height: 100%;
+            width: 30%;
+
+         }
+         .subhan{
+            width: 100%;
+            height: 80%;
+            background-color: #000000;
+            margin: 20px;
+            display: flex;
+            gap: 30px;
+         }
+         .bach1{
+            width: 30%;
+            height: 100%;
+            background-color: #000000;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+           
+         }
+         .bach2{
+            width: 80%;
+            height: 100%;
+            background-color: #000000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            border: 1px rgb(152, 152, 152) solid;
+            border-radius: 30px;
+            
+
+         }
+         .sk{
+            width: 100%;
+            height: 50%;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding: 30px;
+            gap: 20px;
+            
+         }
+           .sk2{
+            width: 100%;
+            height: 20%;
+            background-color: rgb(0, 0, 0);
+            display: flex;
+            align-items: end;
+            justify-content: baseline;
+            padding: 30px;
+            gap: 10px;
+           
+         }
+          .icon-size{
+            width: 30px;
+            height: auto;
+          }
+         .photo{
+            width: 90%;
+            height: auto;
+            background-color: rgb(0, 0, 0);
+            border-radius: 20px;
+         }
+         .but{
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+         }
+            .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+  .swiper-button-prev, .swiper-button-next {
+  color: #b3b3b3;
+  background-color: rgba(0,0,0,0.5);
+  padding: 30px;
+  border-radius: 50%;
+  border: 1px white solid;
+  width: 50px;
+  height: 50px;
+  font-size: 3px;
+    top: 50%;         /* vertical center */
+  transform: translateY(-50%);
+   font-size: 20px;
+  
+ 
+}
+.swiper-button-prev:hover, .swiper-button-next:hover {
+  color: #000;
+  background-color: #dcff7c;
+}
+button{
+  width: 40%;
+  border-radius: 10px;
+  color: #dcff7c;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+  background-color: #000000;
+  height: 50px;
+  font-size: 15px;
+  border: 1px #dcff7c solid;
+  letter-spacing: -1px;
+
+text-decoration: none;
+}
+.p1{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 20px;
+}
+   
+
+    </style>
+</head>
+<body>
+    
+    <div id="imgf">
+
+    </div>
+    <div id="main">
+        <div id="main">
+         <div id="curser">
+                <h4>
+               
+                </h4>
+            </div>
+          <div class="nav">
+            <a href="index.html" class="link">Muhammad Subhan.</a>
+            <a href="projects.html" class="link">Projects</a>
+            <a href="skills.html" class="link">skills</a>
+        </div>
+
+       <div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    
+    <!-- Slide 1 -->
+    <div class="swiper-slide">
+      <div class="subhan">
+          <div class="bach1">
+          <div class="sk">
+            <h1 style="letter-spacing: -3px; color: #c4c4c4; font-weight: lighter; font-size: 70px;">10/1</h1>
+             <h1 style="letter-spacing: -3px;">AI CHAT BOAT</h1>
+            <p style="color: gray;">ai chat boat crated by geminai api integration
+              the best this it can (READ IMAGES) 
+            </p>
+          <a href="https://msubhan817.github.io/chatbot_final/" target="_blank">  <button style="cursor: pointer;">visit site &#8599</button></a>
+          </div>
+          <div class="sk2">
+            <img class="icon-size" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" width="50">
+<img class="icon-size" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" width="50">
+<img class="icon-size" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="50">
+
+
+          </div>
+        </div>
+        <div class="bach2">
+          <div class="photo">
+             <img class="p1" src="img/project 1.PNG" alt="">
+          </div>
+        </div>
+        </div>
+      </div>
+
+      <!-- no2 -->
+        <div class="swiper-slide">
+      <div class="subhan">
+          <div class="bach1">
+          <div class="sk">
+            <h1 style="letter-spacing: -3px; color: #c4c4c4; font-weight: lighter; font-size: 70px;">10/2</h1>
+             <h1 style="letter-spacing: -3px;">AI IMAGE GENERATOR</h1>
+            <p style="color: gray;">ai image generator  crated by hugging face  api integration
+               
+            </p>
+          <a href="https://msubhan817.github.io/chatbot_final/" target="_blank">  <button style="cursor: pointer;">visit site &#8599</button></a>
+          </div>
+          <div class="sk2">
+            <img class="icon-size" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" width="50">
+<img class="icon-size" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" width="50">
+<img class="icon-size" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="50">
+
+
+          </div>
+        </div>
+        <div class="bach2">
+          <div class="photo">
+             <img class="p1" src="img/poject 2.PNG" alt="">
+          </div>
+        </div>
+        </div>
+      </div>
+
+      <!-- n03 -->
+            <div class="swiper-slide">
+      <div class="subhan">
+          <div class="bach1">
+          <div class="sk">
+            <h1 style="letter-spacing: -3px; color: #c4c4c4; font-weight: lighter; font-size: 70px;">10/3</h1>
+             <h1 style="letter-spacing: -3px;">ANIMATED WEBSITE</h1>
+            <p style="color: gray;">lote of modern technology like <span style="color: #dcff7c;">GSAP</span> and <span style="color: #dcff7c;">SWIPER JS </span>is used in this web site
+              and the designe is modern and amazinh
+            </p>
+          <a href="https://msubhan817.github.io/rejouse/" target="_blank">  <button style="cursor: pointer;">visit site &#8599</button></a>
+          </div>
+          <div class="sk2">
+            <img class="icon-size" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" width="50">
+<img class="icon-size" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" width="50">
+<img class="icon-size" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="50">
+
+
+
+          </div>
+        </div>
+        <div class="bach2">
+          <div class="photo">
+             <img class="p1" src="img/project 3.PNG" alt="">
+          </div>
+        </div>
+        </div>
+      </div>
+
+
+      <!-- NO4 -->
+         <div class="swiper-slide">
+      <div class="subhan">
+          <div class="bach1">
+          <div class="sk">
+            <h1 style="letter-spacing: -3px; color: #c4c4c4; font-weight: lighter; font-size: 70px;">10/4</h1>
+             <h1 style="letter-spacing: -3px;">TECH WEBSITE</h1>
+            <p style="color: gray;">this is a frontend of ecommerce website tech based which 
+            </p>
+          <a href="https://msubhan817.github.io/chatbot_final/" target="_blank">  <button style="cursor: pointer;">visit site &#8599</button></a>
+          </div>
+          <div class="sk2">
+            <img class="icon-size" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" width="50">
+<img class="icon-size" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" width="50">
+<img class="icon-size" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="50">
+<img class="icon-size" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" width="50">
+
+
+
+          </div>
+        </div>
+        <div class="bach2">
+          <div class="photo">
+             <img class="p1" src="img/project 4.PNG" alt="">
+          </div>
+        </div>
+        </div>
+      </div>
+
+      <!-- no5 -->
+          <div class="swiper-slide">
+      <div class="subhan">
+          <div class="bach1">
+          <div class="sk">
+            <h1 style="letter-spacing: -3px; color: #c4c4c4; font-weight: lighter; font-size: 70px;">10/5</h1>
+             <h1 style="letter-spacing: -3px;">PERFUME WEBSITE</h1>
+            <p style="color: gray;">this is detailed ecommerce front end full <span style="color: #dcff7c;">RESPONSIVE</span>and ever logic is working
+               
+            </p>
+          <a href="https://msubhan817.github.io/chatbot_final/" target="_blank">  <button style="cursor: pointer;">visit site &#8599</button></a>
+          </div>
+          <div class="sk2">
+            <img class="icon-size" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" width="50">
+<img class="icon-size" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" width="50">
+<img class="icon-size" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="50">
+
+<img class="icon-size" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" width="50">
+
+
+ 
+
+
+
+          </div>
+        </div>
+        <div class="bach2">
+          <div class="photo">
+             <img class="p1" src="img/project 5.PNG" alt="">
+          </div>
+        </div>
+        </div>
+      </div>
+
+       <!-- no6 -->
+            <div class="swiper-slide">
+      <div class="subhan">
+          <div class="bach1">
+          <div class="sk">
+            <h1 style="letter-spacing: -3px; color: #c4c4c4; font-weight: lighter; font-size: 70px;">10/6</h1>
+             <h1 style="letter-spacing: -3px;">CODE EDITOR</h1>
+            <p style="color: gray;">this is a fully functional code editer wit apealing design 
+            </p>
+          <a href="https://msubhan817.github.io/code-editor/" target="_blank">  <button style="cursor: pointer;">visit site &#8599</button></a>
+          </div>
+          <div class="sk2">
+            <img class="icon-size" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" width="50">
+<img class="icon-size" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" width="50">
+<img class="icon-size" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="50">
+
+
+          </div>
+        </div>
+        <div class="bach2">
+          <div class="photo">
+             <img class="p1" src="img/poject 6.PNG" alt="">
+          </div>
+        </div>
+        </div>
+      </div>
+
+
+
+
+
+
+      
+    </div>
+
+    <!-- Slide 2 (same layout, change content as needed) -->
+    <div class="swiper-slide">
+      <div class="subhan">
+        <div class="bach1">
+          <div class="sk">
+            <h1 style="letter-spacing: -3px; color: #c4c4c4; font-weight: lighter; font-size: 70px;">10/6</h1>
+             <h1 style="letter-spacing: -3px;">CODE EDITOR</h1>
+            <p style="color: gray;">
+            </p>
+            <a href="https://msubhan817.github.io/code-editor/" target="_blank" style="cursor: pointer;">  <button>visit site &#8599</button></a>
+         
+          </div>
+          <div class="sk2">
+            <img class="icon-size" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" width="50">
+<img class="icon-size" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" width="50">
+<img class="icon-size" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="50">
+
+
+          </div>
+        </div>
+        <div class="bach2">
+          <div class="photo">
+             <img class="p1" src="img/project 1.PNG" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add more slides as needed -->
+
+  </div>
+
+  <!-- Buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>
+   
+        <div class="subhead">
+            <a  class="contact">&#8616 want to work with me.</a>
+            <a href="about.html" class="worklink">About me.</a>
+            <a href="contact.html" class="worklink">contact me </a>
+            <a  class="aboutme">Click on this option to explore the full pages.
+Detailed information and visuals are just a step away.</a>
+        </div>
+    </div>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>                 var content = document.querySelector("#main");
+var curser = document.querySelector("#curser");
+content.addEventListener("mousemove",function(dets){
+  gsap.to(curser,{
+    x:dets.x,
+    y:dets.y,
+  })
+
+})
+  var swiper = new Swiper(".mySwiper", {
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    loop: true, // Optional: for infinite loop
+  });</script>
+
+</body>
+</html>

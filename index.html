@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Subhan</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css" />
+   <link rel="shortcut icon" href="img/android-chrome-192x192.png" type="image/x-icon">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+        html , body{
+            width: 100%;
+            height: 100vh;
+            background-color: #dcff7c;
+        }
+       .warrap {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 2;
+    opacity: 0; /* added */
+    pointer-events: none; /* so no interaction before show */
+    transition: opacity 0.5s ease;
+}
+        .nav{
+            display: flex;
+            justify-content: space-between;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #dbdbdb;
+            letter-spacing: -3px;
+            font-size: 24px;
+            margin: 1em;
+        }
+        .nav a:first-child{
+            color: #dcff7c;
+        }
+         .nav a::after{
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          height: 1.5px;
+          width: 0;
+          background-color: #dbdbdb;
+          transition: all ease 0.3s;
+         }
+         .nav a:hover::after{
+          width: 100%;
+         }
+          .nav a:first-child::after{
+            background-color: #dcff7c;
+        }
+         .subhead a::after{
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          height: 1.5px;
+          width: 0;
+          background-color: #dbdbdb;
+          transition: all ease 0.3s;
+         }
+         .subhead a:hover::after{
+          width: 100%;
+         }
+         a.aboutme:hover::after{
+          width: 0%;
+
+         }
+        .about p{
+            width: 30%;
+            font-weight: 300;
+            color: #969696;
+            text-transform: lowercase;
+            margin: 1.6em;
+        }
+        .wrappimg{
+            overflow: hidden;
+            position: absolute;
+            top: 15%;
+            right: 10%;
+            transform: translate(-50% , 0);
+            width: 20%;
+            height: 90vh;
+
+        }
+        .image{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+        }
+        .box{
+            background-color: #000;
+            opacity: 0;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 2;
+        }
+        .subhead{
+            position: absolute;
+            bottom: 2em;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .subhead a{
+            text-decoration: none;
+            text-transform: uppercase;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 300;
+            color: #969696;
+        }
+        a.contact{
+            color: #dbdbdb;
+            letter-spacing: -3px;
+            font-size: 24px;
+            margin-left: 1em;
+        }
+        a.aboutme{
+            width: 30%;
+        }
+        .loader{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50% , -50%);
+            text-transform: lowercase;
+            font-size: 2vw;
+            letter-spacing: -2px;
+        }
+        .overlay{
+            width: 100%;
+            height: 100vh;
+           
+           
+        }
+        .block{
+            position: fixed;
+            width: 6%;
+            height: 100vh;
+            background-color: #000;
+        }
+        .block1{
+            left: 0;
+        }
+          .block2{
+            left: 5%;
+        }
+
+          .block3{
+            left: 10%;
+        }
+
+          .block4{
+            left: 15%;
+        }
+
+          .block5{
+            left: 20%;
+        }
+
+          .block6{
+            left: 25%;
+        }
+
+          .block7{
+            left: 30%;
+        }
+
+          .block8{
+            left: 35%;
+        }
+
+          .block9{
+            left: 40%;
+        }
+
+          .block10{
+            left: 45%;
+        }
+
+          .block11{
+            left: 50%;
+        }
+
+          .block12{
+            left: 55%;
+        }
+
+          .block13{
+            left: 60%;
+        }
+
+          .block14{
+            left: 65%;
+        }
+
+          .block15{
+            left: 70%;
+        }
+
+          .block16{
+            left: 75%;
+        }
+
+          .block17{
+            left: 80%;
+        }
+
+          .block18{
+            left: 85%;
+        }
+
+          .block19{
+            left: 90%;
+        }
+
+          .block20{
+            left: 95%;
+        }
+        #curser{
+    width: 1vw;
+    height: 1vw;
+    background-color: #dcff7c;
+    border-radius: 50%;
+    position: fixed;
+      z-index: -1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translate(-50% , -50%);
+}
+#curser h4{
+    font-weight: 500;
+}
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="warrap">
+          <div id="curser">
+                <h4>
+               
+                </h4>
+            </div>
+        <div class="nav">
+            <a href="index.html" class="link">Muhammad Subhan.</a>
+            <a href="projects.html" class="link">Projects</a>
+            <a href="skills.html" class="link">skills</a>
+        </div>
+        <div class="about">
+          <p style="text-transform: capitalize; color: #dbdbdb;">About Me</p>
+            <p>
+Hi, I'm <span style="color: #dcff7c; text-transform: capitalize;">Muhammad subhan</span> a passionate self-taught web developer.
+Over the past year, I’ve learned and built projects using HTML, CSS, JavaScript, PHP,
+Laravel, WordPress,
+and now diving into React.
+I love creating fast, responsive websites and clean web apps — whether it’s a
+custom-built Laravel backend
+or a dynamic WordPress site.
+My goal is to help clients bring their ideas to life with modern, efficient code and great
+design.</p>
+        </div>
+        <div class="wrappimg">
+            <div class="box"></div>
+            <div>
+                <img class="image" src="img/profile.jpeg" alt="">
+            </div>
+        </div>
+        <div class="subhead">
+            <a class="contact">&#8616 want to work with me.</a>
+            <a href="about.html" class="worklink">About me.</a>
+            <a href="contact.html" class="worklink">contact me</a>
+            <a class="aboutme">Click on this option to explore the full pages.
+Detailed information and visuals are just a step away. </a>
+        </div>
+       
+    </div>
+     <div class="container">
+            <div class="loader">Welcome to my portfolio</div>
+            <div class="overlay">
+              <div class="block block1"></div>  
+              <div class="block block2"></div>
+              <div class="block block3"></div>
+              <div class="block block4"></div>
+              <div class="block block5"></div>
+              <div class="block block6"></div>
+              <div class="block block7"></div>
+              <div class="block block8"></div>
+              <div class="block block9"></div>
+              <div class="block block10"></div>
+              <div class="block block11"></div>
+              <div class="block block12"></div>
+              <div class="block block13"></div>
+              <div class="block block14"></div>
+              <div class="block block15"></div>
+              <div class="block block16"></div>
+              <div class="block block17"></div>
+              <div class="block block18"></div>
+              <div class="block block19"></div>
+              <div class="block block20"></div>
+                
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+
+    <script>
+        TweenMax.staggerFrom(".block",0.5,{
+            width : "0%",
+            ease :" power1 .easeIn",
+            delay : 2 ,
+        },0.04);
+
+         TweenMax.to(".loader",1,{
+           x : 2,
+           opacity : 0,
+           ease : "expo.easeInOut",
+           delay : 1.5,
+        });
+         TweenMax.staggerFrom(".nav > a, .about > p , .subhead > a",2,{
+            y : 30,
+            ease : "expo.easeInOut",
+            delay : 3 ,
+            opacity : 1,
+        },0.06);
+         TweenMax.to(".box",0.2,{
+          
+           opacity : 1,
+           ease : "expo.easeInOut",
+           delay : 3.8,
+        });
+         TweenMax.to(".image",0.2,{
+          
+           opacity : 1,
+           ease :" expo.easeInOut",
+           delay : 4,
+        });
+          TweenMax.to(".box",1.5,{
+          
+           y : "100%",
+           ease :" expo.easeInOut",
+           delay : 4,
+        });
+         var content = document.querySelector(".warrap");
+var curser = document.querySelector("#curser");
+content.addEventListener("mousemove",function(dets){
+  gsap.to(curser,{
+    x:dets.x,
+    y:dets.y,
+  })
+
+})
+content.addEventListener("mouseenter",function(){
+    gsap.to(curser,{
+        scale:1,
+        opacity:1,
+    })
+})
+content.addEventListener("mouseleave",function(){
+    gsap.to(curser,{
+        scale:0,
+        opacity:0,
+    })
+})
+TweenMax.to(".warrap", 0.5, {
+  opacity: 1,
+  delay: 2.8,
+  onStart: function() {
+    document.querySelector('.warrap').style.pointerEvents = "all";
+  }
+});
+
+       
+    </script>
+</body>
+</html>
