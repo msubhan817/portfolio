@@ -7,11 +7,17 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css" />
    <link rel="shortcut icon" href="img/android-chrome-192x192.png" type="image/x-icon">
     <style>
+         @font-face {
+  font-family: "MyCustomFont";
+  src: url("fonts/Satoshi-Variable.ttf") format("truetype");
+  /* Add other formats for compatibility */
+  /* src: url("fonts/myfont.ttf") format("truetype"); */
+}
         *{
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: "MyCustomFont", sans-serif;
 
         }
         html , body{
@@ -119,7 +125,7 @@
         .subhead a{
             text-decoration: none;
             text-transform: uppercase;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family:  "MyCustomFont", sans-serif;
             font-weight: 300;
             color: #969696;
         }
