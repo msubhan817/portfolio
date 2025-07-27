@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhammad Subhan</title>
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <link rel="shortcut icon" href="img/android-chrome-192x192.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+             @font-face {
+  font-family: "MyCustomFont";
+  src: url("fonts/Satoshi-Variable.ttf") format("truetype");
+  /* Add other formats for compatibility */
+  /* src: url("fonts/myfont.ttf") format("truetype"); */
+}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100vw;
+      height: 100vh;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      background-color: black;
+      font-family:"MyCustomFont", sans-serif;
+    }
+
+
+    .slider {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      padding: 4vw;
+   
+    }
+
+    .sliderwrap {
+      width: max-content;
+      padding: 0 150px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      gap: 100px;
+    }
+
+  .slide {
+  width: 500px;
+  height: 500px;
+  background-color: rgb(6, 6, 6);
+  border: 1px solid #969696;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.slide h2{
+  color: #969696;
+  font-size: 4vw;
+  text-transform: uppercase;
+   letter-spacing: -5px;
+}
+
+  
+    .markers-w {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: max-content;
+      height: 100vh;
+    }
+
+    .markers {
+      position: relative;
+      width: 2px;
+      height: 100%;
+      background-color: rgb(255, 255, 255);
+    }
+
+    .markers::after {
+      content: "";
+      position: absolute;
+      top: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 40px;
+      background-color: rgb(7, 7, 7);
+      border: 2px solid rgb(255, 255, 255);
+      border-radius: 50%;
+    }
+
+    .activeslider {
+      position: absolute;
+      top: 60px;
+      left: 40px;
+      font-size: 15px;
+      color: aliceblue;
+    }
+    .nav{
+            display: flex;
+            justify-content: space-between;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #dbdbdb;
+            letter-spacing: -3px;
+            font-size: 24px;
+            margin: 1em;
+            position: relative;
+        }
+        .nav a:first-child{
+            color: #dcff7c;
+        }
+
+        .subhead{
+            position: absolute;
+            bottom: 2em;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .subhead a{
+            text-decoration: none;
+            text-transform: uppercase;
+            font-family:"MyCustomFont", sans-serif;
+            font-weight: 300;
+            color: #969696;
+            position: relative;
+        }
+        a.contact{
+            color: #dbdbdb;
+            letter-spacing: -3px;
+            font-size: 24px;
+            margin-left: 1em;
+        }
+        a.aboutme{
+            width: 30%;
+        }
+                #curser{
+    width: 1vw;
+    height: 1vw;
+    background-color: #dcff7c;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 9999; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translate(-50% , -50%);
+}
+#curser h4{
+    font-weight: 500;
+}
+
+ .nav a::after{
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          height: 1.5px;
+          width: 0;
+          background-color: #dbdbdb;
+          transition: all ease 0.3s;
+         }
+         .nav a:hover::after{
+          width: 100%;
+         }
+          .nav a:first-child::after{
+            background-color: #dcff7c;
+        }
+         .subhead a::after{
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          height: 1.5px;
+          width: 0;
+          background-color: #969696;
+          transition: all ease 0.3s;
+         }
+         .subhead a:hover::after{
+          width: 100%;
+         }
+         a.aboutme:hover::after{
+          width: 0%;
+
+         }
+@media (max-width: 768px) {
+  .subhead {
+    position: static;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2em 1em;
+    gap: 0.5em;
+  }
+
+  .subhead a {
+    font-size: 4.5vw;
+    width: 100%;
+  }
+
+  a.contact {
+    font-size: 6vw;
+    margin-bottom: 0.5em;
+    color: #dbdbdb;
+  }
+
+  a.aboutme {
+    font-size: 4vw;
+    font-style: italic;
+    margin-top: 1em;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div id="transition-overlay3" style="
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #dcff7c;
+  z-index: 9999;
+  transform: scaleY(0);
+  transform-origin: top;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 5px;
+  font-family:MyCustomFont, sans-serif;
+  font-size: 100px;
+  letter-spacing:-10px;
+
+"> <p>skills</p></div>
+  <div class="warrap">
+          <div id="curser">
+                <h4>
+               
+                </h4>
+            </div>
+
+    <div class="nav">
+            <a href="index.html" class="link">Muhammad Subhan.</a>
+            <a href="projects.html" class="link">Projects</a>
+            <a href="skills.html" class="link">skills</a>
+        </div>
+
+  <div class="markers-w">
+    <div class="markers">
+      <div class="grap"></div>
+    </div>
+    <div class="activeslider">1/11</div>
+  </div>
+
+  <div class="slider">
+  <div class="sliderwrap">
+  <div class="slide"><i class="devicon-html5-plain colored" style="font-size: 150px;"></i><h2>html</h2></div>
+  <div class="slide"><i class="devicon-css3-plain colored" style="font-size: 150px;"></i><h2>css</h2></div>
+  <div class="slide"><i class="devicon-javascript-plain colored" style="font-size: 150px;"></i><h2>javascript</h2></div>
+  <div class="slide"><i class="devicon-bootstrap-plain colored" style="font-size: 150px;"></i><h2>bootstrap</h2></div>
+  <div class="slide"><i class="devicon-git-plain colored" style="font-size: 150px;"></i><h2>git</h2></div>
+  <div class="slide"><i class="devicon-github-original" style="font-size: 150px; color: white;"></i><h2>github</h2></div>
+  <div class="slide"><i class="devicon-php-plain colored" style="font-size: 150px;"></i><h2>php</h2></div>
+  <!-- <div class="slide"><i class="devicon-laravel-plain colored" style="font-size: 150px;"></i><h2>laravel</h2></div> -->
+   <div class="slide"><i class="devicon-mysql-plain colored" style="font-size: 150px;"></i><h2>mysql</h2></div>
+  <div class="slide"><i class="devicon-figma-plain colored" style="font-size: 150px;"></i><h2>figma</h2></div>
+<div class="slide">
+  <i class="devicon-angularjs-plain colored" style="font-size: 150px;"></i>
+  <h2>Angular</h2>
+</div>
+ <div class="slide">
+<div class="slide">
+  <img src="img/file_type_sql_icon_130152.png" alt="SQL Server Icon" style="height: 150px;">
+  <h2>SQL Server</h2>
+</div>
+</div>
+
+  </div>
+    <div class="subhead">
+            <a  class="contact">&#8616 want to work with me.</a>
+            <a href="about.html" class="worklink">About me.</a>
+            <a href="contact.html" class="worklink">contact me</a>
+            <a class="aboutme">Click on this option to explore the full pages.
+Detailed information and visuals are just a step away. </a>
+        </div>
+        </div>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+  <script>
+    let target = 0;
+    let current = 0;
+    const ease = 0.075;
+
+    const sliderwrap = document.querySelector(".sliderwrap");
+    const markerw = document.querySelector(".markers-w");
+    const activeslider = document.querySelector(".activeslider");
+
+    let maxscroll = sliderwrap.offsetWidth - window.innerWidth;
+
+    function lerp(start, end, factor) {
+      return start + (end - start) * factor;
+    }
+
+    function updateActiveSlider(markerMove, markerMaxMove) {
+      const partWidth = markerMaxMove / 11;
+      let currentPart = Math.round((markerMove - 70) / partWidth) + 1;
+      currentPart = Math.max(1, Math.min(12, currentPart));
+      activeslider.textContent = `${currentPart}/12`;
+    }
+
+    function update() {
+      current = lerp(current, target, ease);
+
+      gsap.set(".sliderwrap", {
+        x: -current,
+      });
+
+      const moveRatio = current / maxscroll;
+      const markerMaxMove = window.innerWidth - markerw.offsetWidth - 170;
+      const markerMove = 70 + moveRatio * markerMaxMove;
+
+      gsap.set(".markers-w", {
+        x: markerMove,
+      });
+
+      updateActiveSlider(markerMove, markerMaxMove);
+      requestAnimationFrame(update);
+    }
+
+    window.addEventListener("resize", () => {
+      maxscroll = sliderwrap.offsetWidth - window.innerWidth;
+    });
+
+    window.addEventListener("wheel", (e) => {
+      target += e.deltaY;
+      target = Math.max(0, Math.min(maxscroll, target));
+    });
+
+    window.addEventListener("load", () => {
+      // Ensure images are loaded before starting
+      maxscroll = sliderwrap.offsetWidth - window.innerWidth;
+      update();
+    });
+             var content = document.querySelector(".warrap");
+var curser = document.querySelector("#curser");
+content.addEventListener("mousemove",function(dets){
+  gsap.to(curser,{
+    x:dets.x,
+    y:dets.y,
+  })
+
+})
+// Animate page exit (when clicking internal links)
+const links = document.querySelectorAll("a");
+
+links.forEach(link => {
+  link.addEventListener("click", function (e) {
+    // Only animate for internal links
+    if (link.hostname === window.location.hostname) {
+      e.preventDefault();
+
+      // Animate overlay to full screen
+      gsap.to("#transition-overlay3", {
+        scaleY: 1,
+        transformOrigin: "bottom", // from bottom to top
+        duration: 0.7,
+        ease: "power1.inOut",
+        onComplete: () => {
+          window.location = link.href;
+        }
+      });
+    }
+  });
+});
+
+// Animate page enter (when page loads)
+window.addEventListener("load", () => {
+  gsap.fromTo("#transition-overlay3", 
+    { scaleY: 1, transformOrigin: "top" }, // start fully covered from top
+    { scaleY: 0, duration: 0.6, ease: "power2.inOut" } // reveal to bottom
+  );
+});
+
+    
+  </script>
+</body>
+</html>

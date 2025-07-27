@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Subahn</title>
+    <link rel="shortcut icon" href="img/android-chrome-192x192.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+
+         @font-face {
+  font-family: "MyCustomFont";
+  src: url("fonts/Satoshi-Variable.ttf") format("truetype");
+  /* Add other formats for compatibility */
+  /* src: url("fonts/myfont.ttf") format("truetype"); */
+}
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html ,body{
+            width: 100%;
+            height: 100%;
+            font-family:"MyCustomFont", sans-serif;
+             background-color: #000;
+        }
+        #main{
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            padding:  0;
+          
+           
+        }
+        .elem{
+            width: 100%;
+            height: 200px;
+         border:1px solid gray ;
+         border-radius: 20px;
+            display: flex;
+            align-items: flex-end;
+            padding: 3vw;
+              position: relative;
+              cursor: pointer;
+              overflow: hidden;
+        
+
+
+        }
+        .elem h2 {
+            font-size: 1vw;
+            color: #a32a2a;
+            z-index: 9;
+            text-transform: uppercase;
+        }
+        
+       .elem .overlay {
+    width: 100%;
+    height: 100%;
+    background-color: #dcff7c;
+    position: absolute;
+    left: 0;
+    top: -100%;
+    transition: top 0.3s ease; /* Optional for smooth animation */
+    pointer-events: none;
+}
+
+.elem:hover .overlay {
+    top: 0;
+}
+.elem:hover h2{
+    color: #000;
+}
+.subhead{
+            position: absolute;
+            bottom: 2em;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .subhead a{
+            text-decoration: none;
+            text-transform: uppercase;
+            font-family: "MyCustomFont", sans-serif;
+            font-weight: 300;
+            color: #969696;
+            position: relative;
+        }
+        a.contact{
+            color: #dbdbdb;
+            letter-spacing: -3px;
+            font-size: 24px;
+            margin-left: 1em;
+        }
+        a.aboutme{
+            width: 30%;
+        }
+
+ .nav{
+            display: flex;
+            justify-content: space-between;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #dbdbdb;
+            letter-spacing: -3px;
+            font-size: 24px;
+            margin: 1em;
+            position: relative;
+        }
+        .nav a:first-child{
+            color: #dcff7c;
+        }
+        .elemcontainer{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          
+            height: 70%;
+           
+        }
+        .colum1{
+            display: flex;
+            flex-direction: column;
+            
+            width: 50%;
+            align-items: center;
+             gap: 20px;
+             padding: 4vw;
+        }
+        .elem h2 {
+    font-size: 3vw;
+    color: #969696;
+    z-index: 9;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    position: relative;
+}
+
+/* Icon links beside h2 */
+.elem .icons a {
+    
+    color: #ffffff;
+    font-size: 2vw;
+    transition: color 0.3s ease;
+}
+
+.elem .icons a:hover {
+    color: #000000;
+}
+
+/* Top-right arrow icon */
+.arrow-icon {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5vw;
+    color: #ffffff;
+    z-index: 10;
+}
+
+.elem:hover .arrow-icon{
+    color: #000000;
+}
+.arrow-icon1 a {
+    position: absolute;
+    top: 40%;
+    left: 3vw;
+    font-size: 1.5vw;
+    color: #ffffff;
+    z-index: 10;
+}
+
+.elem:hover .arrow-icon1 a{
+    color: #000000;
+}
+                #curser{
+    width: 1vw;
+    height: 1vw;
+    background-color: #dcff7c;
+    border-radius: 50%;
+    position: fixed;
+     z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translate(-50% , -50%);
+}
+#curser h4{
+    font-weight: 500;
+}
+.nav a::after{
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          height: 1.5px;
+          width: 0;
+          background-color: #dbdbdb;
+          transition: all ease 0.3s;
+         }
+         .nav a:hover::after{
+          width: 100%;
+         }
+          .nav a:first-child::after{
+            background-color: #dcff7c;
+        }
+         .subhead a::after{
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          height: 1.5px;
+          width: 0;
+          background-color: #969696;
+          transition: all ease 0.3s;
+         }
+         .subhead a:hover::after{
+          width: 100%;
+         }
+         a.aboutme:hover::after{
+          width: 0%;
+
+         }
+         .elem-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+
+
+   @media (max-width: 768px) {
+  .subhead {
+    position: static;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2em 1em;
+    gap: 0.5em;
+  }
+
+  .subhead a {
+    font-size: 4.5vw;
+    width: 100%;
+  }
+
+  a.contact {
+    font-size: 6vw;
+    margin-bottom: 0.5em;
+    color: #dbdbdb;
+  }
+
+  a.aboutme {
+    font-size: 4vw;
+    font-style: italic;
+    margin-top: 1em;
+  }
+}
+
+    </style>
+</head>
+<body>
+      <div id="transition-overlay2" style="
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #dcff7c;
+  z-index: 9999;
+  transform: scaleY(0);
+  transform-origin: top;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 5px;
+  font-family: MyCustomFont, sans-serif;
+  font-size: 100px;
+  letter-spacing:-10px;
+
+"> <p>contact</p></div>
+    
+    <div id="imgf">
+
+    </div>
+    <div id="main">
+        <div id="main">
+         <div id="curser">
+                <h4>
+               
+                </h4>
+            </div>
+          <div class="nav">
+            <a href="index.html" class="link">Muhammad Subhan.</a>
+            <a href="projects.html" class="link">Projects</a>
+            <a href="skills.html" class="link">skills</a>
+        </div>
+       
+       <div class="elemcontainer">
+        <div class="colum1">
+             
+        <div class="elem" data-image="your-image.jpg">
+  <div class="overlay"></div>
+  
+  <!-- Arrow icon top-right -->
+  <div class="arrow-icon">&#8599;</div>
+   <div class="arrow-icon1"> <a href="https://www.instagram.com/m.subhan_________?igsh=MXN5eHB6bndsMzRzNA==" target="_blank"><i class="fab fa-instagram"></i></a></div>
+  
+  <!-- Main heading with social icons -->
+   <a style="  text-decoration: none;"href="https://www.instagram.com/mushaida_e_code?igsh=MXN5eHB6bndsMzRzNA==" target="_blank">
+  <h2 >
+   instagram
+   
+   
+  </h2>
+  </a>
+</div>
+        
+        <div class="elem" >
+           
+            <div class="overlay"></div>
+            <div class="arrow-icon">&#8599;</div>
+             <div class="arrow-icon1"> <a href="https://mail.google.com/mail/?view=cm&to=amirsubhan817@gmail.com&su=Let's%20Work%20Together&body=Hi%20Subhan,%0AI%20want%20to%20collaborate."  target="_blank"><i class="fas fa-envelope"></i></a></div>
+           <a href="https://mail.google.com/mail/?view=cm&to=amirsubhan817@gmail.com&su=Let's%20Work%20Together&body=Hi%20Subhan,%0AI%20want%20to%20collaborate." target="_blank" class="elem-link">
+            <h2>email </h2>
+            </a>
+            
+        </div>
+        </div>
+    <div class="colum1">
+        <div class="elem"  >
+           
+            <div class="overlay"></div>
+            <div class="arrow-icon">&#8599;</div>
+             <div class="arrow-icon1"> <a href="https://www.linkedin.com/in/subhan-amir-a52411369?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin-in"></i></a></div>
+             <a style="  text-decoration: none;" href="https://www.linkedin.com/in/subhan-amir-a52411369?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+            <h2>linkedin
+
+            </h2>
+            </a>
+        </div>
+         <div class="elem"  >
+            <div class="overlay"></div>
+            <div class="arrow-icon">&#8599;</div>
+             <div class="arrow-icon1"> <a href="https://github.com/msubhan817" target="_blank"><i class="fab fa-github"></i></a></div>
+              <a style="  text-decoration: none;" href="https://github.com/msubhan817" target="_blank">
+            <h2>github
+
+            </h2>
+        </a>
+        </div>
+        </div>
+       </div>
+        <div class="subhead">
+            <a  class="contact">&#8616 want to work with me.</a>
+            <a href="about.html" class="worklink">About me.</a>
+            <a href="contact.html" class="worklink">contact me </a>
+            <a  class="aboutme">Click on this option to explore the full pages.
+Detailed information and visuals are just a step away.</a>
+        </div>
+    </div>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>                 var content = document.querySelector("#main");
+var curser = document.querySelector("#curser");
+content.addEventListener("mousemove",function(dets){
+  gsap.to(curser,{
+    x:dets.x,
+    y:dets.y,
+  })
+
+})
+
+// Animate page exit (when clicking internal links)
+const links = document.querySelectorAll("a");
+
+links.forEach(link => {
+  link.addEventListener("click", function (e) {
+    // Only animate for internal links
+    if (link.hostname === window.location.hostname) {
+      e.preventDefault();
+
+      // Animate overlay to full screen
+      gsap.to("#transition-overlay2", {
+        scaleY: 1,
+        transformOrigin: "bottom", // from bottom to top
+        duration: 0.9,
+        ease: "power1.inOut",
+        onComplete: () => {
+          window.location = link.href;
+        }
+      });
+    }
+  });
+});
+
+// Animate page enter (when page loads)
+window.addEventListener("load", () => {
+  gsap.fromTo("#transition-overlay2", 
+    { scaleY: 1, transformOrigin: "top" }, // start fully covered from top
+    { scaleY: 0, duration: 0.6, ease: "power2.inOut" } // reveal to bottom
+  );
+});</script>
+
+</body>
+</html>
